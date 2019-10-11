@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="Number" id="box">
+<button type="button" onclick="clickhere()">Click here</button>
+<div id="do"></div>
+<script>
+function clickhere() {
+    let C = document.getElementById("box").value;
+    let changeC = function (C) {
+        this.C = C;
+        this.doF = function () {
+            return C * 1.8 + 32;
+        };
+
+        this.doK = function () {
+            return C + 273.15;
+        }
+    };
+
+    let doiND = new changeC(C);
+    document.getElementById("do").innerHTML="do F la: " + doiND.doF() +"<br>" + "do K la: " + doiND.doK();
+}
+</script>
+</body>
+</html>
